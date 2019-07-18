@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - AddPathwaysDelegate
 protocol AddPathwaysDelegate: class {
-    func presentPicturePicker()
+    func addPath(recognizer: UITapGestureRecognizer)
 }
 
 
@@ -29,12 +29,9 @@ class AddPathwaysView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = UIImageView.ContentMode.scaleAspectFill
         imageView.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(pictureTapped(_ :)))
+        imageView.addGestureRecognizer(tapRecognizer)
         return imageView
-    }()
-    
-    lazy var navBar: UINavigationBar = {
-        let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 132))
-        return navigationBar
     }()
     
     override init(frame: CGRect) {
@@ -51,19 +48,12 @@ class AddPathwaysView: UIView {
     
     func addSubviews() {
         backgroundColor = .white
-        setupDoneButton()
         
         self.addSubview(scrollView)
         scrollView.addSubview(pictureView)
-        self.addSubview(navBar)
     }
     
     func layoutView() {
-        navBar.translatesAutoresizingMaskIntoConstraints = false
-        navBar.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
-        navBar.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        navBar.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
@@ -76,19 +66,12 @@ class AddPathwaysView: UIView {
         pictureView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         pictureView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
     }
-    
-    func setupDoneButton() {
-        let navItem = UINavigationItem(title: "Test")
-        let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(showPicker))
-        navItem.rightBarButtonItem = button
-        navBar.setItems([navItem], animated: true)
-    }
 }
 
 // MARK: - Actions
 extension AddPathwaysView {
-    @objc func showPicker() {
-        delegate?.presentPicturePicker()
-        print("trying to go home")
+    
+    @objc func pictureTapped(_ tapRecognizer: UITapGestureRecognizer) {
+        delegate?.addPath(recognizer: tapRecognizer)
     }
 }

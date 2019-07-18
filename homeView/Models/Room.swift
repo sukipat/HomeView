@@ -8,12 +8,18 @@
 
 import UIKit
 
-class Room  {
+class Room {
     var roomName: String
     var imageName: String
+    var pathways: [Pathway]
     
-    init(roomName: String, imageName: String) {
+    init(roomName: String, imageName: String, pathways: [Pathway]) {
         self.roomName = roomName
         self.imageName = imageName
+        self.pathways = pathways
+    }
+    
+    func addPath(pathwayToAdd: Pathway) {
+        pathways.append(pathwayToAdd)
     }
 }

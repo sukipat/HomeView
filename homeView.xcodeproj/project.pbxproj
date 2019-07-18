@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC00DD2C22E02E1600B6FE84 /* Pathway.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC00DD2B22E02E1600B6FE84 /* Pathway.swift */; };
 		BC1286D822DC02F000248C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1286D722DC02F000248C37 /* AppDelegate.swift */; };
 		BC1286E022DC02F000248C37 /* homeView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC1286DE22DC02F000248C37 /* homeView.xcdatamodeld */; };
 		BC1286E222DC02F100248C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1286E122DC02F100248C37 /* Assets.xcassets */; };
 		BC1286E522DC02F100248C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1286E322DC02F100248C37 /* LaunchScreen.storyboard */; };
 		BC1286F022DC02F100248C37 /* homeViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1286EF22DC02F100248C37 /* homeViewUITests.swift */; };
 		BC12870122DC154100248C37 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC12870022DC154100248C37 /* House.swift */; };
-		BC12870322DC167300248C37 /* FindHouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC12870222DC167300248C37 /* FindHouseView.swift */; };
-		BC12870722DC189200248C37 /* FindHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC12870622DC189200248C37 /* FindHouseViewController.swift */; };
-		BC2393CF22DCEAFE009FBB9E /* LocationSearchTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2393CE22DCEAFE009FBB9E /* LocationSearchTableController.swift */; };
-		BC7B355222DEA8A7000CA677 /* PickPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355122DEA8A7000CA677 /* PickPictureViewController.swift */; };
-		BC7B355422DEA964000CA677 /* PickPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355322DEA964000CA677 /* PickPictureView.swift */; };
+		BC7B355222DEA8A7000CA677 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355122DEA8A7000CA677 /* HouseViewController.swift */; };
+		BC7B355422DEA964000CA677 /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355322DEA964000CA677 /* HouseView.swift */; };
 		BC7B355622DECA87000CA677 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355522DECA87000CA677 /* Room.swift */; };
 		BC7B355822DED52D000CA677 /* AddPathwaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355722DED52D000CA677 /* AddPathwaysViewController.swift */; };
 		BC7B355A22DED7A7000CA677 /* AddPathwaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355922DED7A7000CA677 /* AddPathwaysView.swift */; };
@@ -34,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC00DD2B22E02E1600B6FE84 /* Pathway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pathway.swift; sourceTree = "<group>"; };
 		BC1286D422DC02F000248C37 /* homeView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homeView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1286D722DC02F000248C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC1286DF22DC02F000248C37 /* homeView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = homeView.xcdatamodel; sourceTree = "<group>"; };
@@ -44,11 +43,8 @@
 		BC1286EF22DC02F100248C37 /* homeViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewUITests.swift; sourceTree = "<group>"; };
 		BC1286F122DC02F100248C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC12870022DC154100248C37 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
-		BC12870222DC167300248C37 /* FindHouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHouseView.swift; sourceTree = "<group>"; };
-		BC12870622DC189200248C37 /* FindHouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHouseViewController.swift; sourceTree = "<group>"; };
-		BC2393CE22DCEAFE009FBB9E /* LocationSearchTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableController.swift; sourceTree = "<group>"; };
-		BC7B355122DEA8A7000CA677 /* PickPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPictureViewController.swift; sourceTree = "<group>"; };
-		BC7B355322DEA964000CA677 /* PickPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPictureView.swift; sourceTree = "<group>"; };
+		BC7B355122DEA8A7000CA677 /* HouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
+		BC7B355322DEA964000CA677 /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
 		BC7B355522DECA87000CA677 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		BC7B355722DED52D000CA677 /* AddPathwaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPathwaysViewController.swift; sourceTree = "<group>"; };
 		BC7B355922DED7A7000CA677 /* AddPathwaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPathwaysView.swift; sourceTree = "<group>"; };
@@ -117,6 +113,7 @@
 				BC1286DE22DC02F000248C37 /* homeView.xcdatamodeld */,
 				BC12870022DC154100248C37 /* House.swift */,
 				BC7B355522DECA87000CA677 /* Room.swift */,
+				BC00DD2B22E02E1600B6FE84 /* Pathway.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,10 +121,8 @@
 		BC1286FB22DC0DCE00248C37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BC12870222DC167300248C37 /* FindHouseView.swift */,
-				BC7B355322DEA964000CA677 /* PickPictureView.swift */,
+				BC7B355322DEA964000CA677 /* HouseView.swift */,
 				BC7B355922DED7A7000CA677 /* AddPathwaysView.swift */,
-				BC1286E322DC02F100248C37 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,9 +130,7 @@
 		BC1286FC22DC0DD200248C37 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BC12870622DC189200248C37 /* FindHouseViewController.swift */,
-				BC2393CE22DCEAFE009FBB9E /* LocationSearchTableController.swift */,
-				BC7B355122DEA8A7000CA677 /* PickPictureViewController.swift */,
+				BC7B355122DEA8A7000CA677 /* HouseViewController.swift */,
 				BC7B355722DED52D000CA677 /* AddPathwaysViewController.swift */,
 			);
 			path = Controllers;
@@ -147,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				BC1286E122DC02F100248C37 /* Assets.xcassets */,
+				BC1286E322DC02F100248C37 /* LaunchScreen.storyboard */,
 				BC1286E622DC02F100248C37 /* Info.plist */,
 			);
 			path = Resources;
@@ -256,13 +250,11 @@
 				BC1286E022DC02F000248C37 /* homeView.xcdatamodeld in Sources */,
 				BC12870122DC154100248C37 /* House.swift in Sources */,
 				BC7B355822DED52D000CA677 /* AddPathwaysViewController.swift in Sources */,
-				BC12870322DC167300248C37 /* FindHouseView.swift in Sources */,
-				BC7B355422DEA964000CA677 /* PickPictureView.swift in Sources */,
+				BC7B355422DEA964000CA677 /* HouseView.swift in Sources */,
 				BC7B355A22DED7A7000CA677 /* AddPathwaysView.swift in Sources */,
-				BC2393CF22DCEAFE009FBB9E /* LocationSearchTableController.swift in Sources */,
-				BC7B355222DEA8A7000CA677 /* PickPictureViewController.swift in Sources */,
+				BC7B355222DEA8A7000CA677 /* HouseViewController.swift in Sources */,
 				BC1286D822DC02F000248C37 /* AppDelegate.swift in Sources */,
-				BC12870722DC189200248C37 /* FindHouseViewController.swift in Sources */,
+				BC00DD2C22E02E1600B6FE84 /* Pathway.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

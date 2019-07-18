@@ -11,9 +11,15 @@ import UIKit
 class House {
     var Address: String
     var Image: UIImage
+    var Rooms: [Room]
     
     init(Address: String, Image: UIImage) {
         self.Address = Address
         self.Image = Image
+        self.Rooms = [Room]()
+    }
+    
+    func addRoom(roomToAdd: Room) {
+        Rooms.append(roomToAdd)
     }
 }

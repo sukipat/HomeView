@@ -9,23 +9,26 @@
 import UIKit
 import AVFoundation
 
-class PickPictureViewController: UIViewController {
+class HouseViewController: UIViewController {
     
-    let pickPicture = PickPictureView()
-
+    let houseView = HouseView()
+    typealias receivedRoomName = (String) -> Void
+    
     override func loadView() {
-        view = pickPicture
+        view = houseView
+        houseView.delegate = self
+        houseView.roomTable.delegate = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickPicture.delegate = self
+        setupNavBar(houseName: "House")
     }
     
 }
 
 // MARK: - Actions
-extension PickPictureViewController {
+extension HouseViewController {
     func requestCameraPermission() -> AVAuthorizationStatus {
         var isAuthorized = false
         if AVCaptureDevice.authorizationStatus(for: .video) != .authorized {
@@ -36,7 +39,12 @@ extension PickPictureViewController {
         if isAuthorized { return .authorized } else { return .restricted }
     }
     
-    func getRoomName() -> String {
+    func setupNavBar(houseName: String) {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentImagePicker))
+        navigationItem.title = houseName
+    }
+    
+    func getRoomName(completed: @escaping receivedRoomName) {
         var roomName = "Room"
         
         let alert = UIAlertController(title: "What room is this?", message: "This is how you will refer to this room in images", preferredStyle: .alert)
@@ -46,17 +54,37 @@ extension PickPictureViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
             roomName = textField?.text ?? "Room"
+            
+            completed(roomName)
         }))
         
-        self.present(alert, animated: true, completion: nil)
-        return roomName
+        present(alert, animated: true)
+    }
+    
+}
+
+// MARK: - HouseViewDelegate
+extension HouseViewController: HouseViewDelegate {
+    
+}
+
+// MARK: - UITableViewDelegate
+extension HouseViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    private func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "roomCell", for: indexPath as IndexPath)
+        cell.textLabel?.text = "Testing"
+        return cell
     }
 }
 
-// MARK: - PictureViewDelegate
-extension PickPictureViewController: PickPictureDelegate {
+// MARK: - UIImagePickerControllerSetup
+extension HouseViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func presentImagePicker() {
+    @objc func presentImagePicker() {
         let cameraAuthStatus = requestCameraPermission()
         
         if cameraAuthStatus == .restricted {
@@ -78,15 +106,11 @@ extension PickPictureViewController: PickPictureDelegate {
         imagePickerController.allowsEditing = false
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary
-                
+        
         present(imagePickerController, animated: true)
         
     }
     
-}
-
-// MARK: - UIImagePickerControllerSetup
-extension PickPictureViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
         
@@ -97,8 +121,13 @@ extension PickPictureViewController: UIImagePickerControllerDelegate, UINavigati
         
         let addPathwaysController = AddPathwaysViewController()
         
-        addPathwaysController.setImage(selectedImage: chosenImage)
-        present(addPathwaysController, animated: true)
+        
+        getRoomName(completed: {roomName -> Void in
+            addPathwaysController.setImage(selectedImage: chosenImage)
+            addPathwaysController.setupNavBar(roomName: roomName)
+            
+            self.navigationController?.pushViewController(addPathwaysController, animated: true)
+        })
+        
     }
 }
-
