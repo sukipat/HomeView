@@ -10,19 +10,23 @@ import UIKit
 import AVFoundation
 
 class HouseViewController: UIViewController {
-    
+    // MARK: - Propertiess
     let houseView = HouseView()
     typealias receivedRoomName = (String) -> Void
-    
+
     override func loadView() {
         view = houseView
         houseView.delegate = self
-        houseView.roomTable.delegate = self
+        houseView.roomTable.dataSource = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavBar(houseName: "House")
+        setupNavBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        houseView.roomTable.reloadData()
     }
     
 }
@@ -39,12 +43,18 @@ extension HouseViewController {
         if isAuthorized { return .authorized } else { return .restricted }
     }
     
-    func setupNavBar(houseName: String) {
+    func setupNavBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentImagePicker))
+        
+        guard let houseName = DataController.shared.CurrentHouse?.Address else {
+            navigationItem.title = "House"
+            return
+        }
         navigationItem.title = houseName
     }
     
     func getRoomName(completed: @escaping receivedRoomName) {
+        
         var roomName = "Room"
         
         let alert = UIAlertController(title: "What room is this?", message: "This is how you will refer to this room in images", preferredStyle: .alert)
@@ -52,16 +62,17 @@ extension HouseViewController {
             textField.placeholder = "Room Name"
         })
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            let textField = alert?.textFields![0]
+            let textField = alert?.textFields!.first
             roomName = textField?.text ?? "Room"
             
             completed(roomName)
         }))
         
-        present(alert, animated: true)
+        self.present(alert, animated: true)
     }
-    
+
 }
+
 
 // MARK: - HouseViewDelegate
 extension HouseViewController: HouseViewDelegate {
@@ -69,14 +80,26 @@ extension HouseViewController: HouseViewDelegate {
 }
 
 // MARK: - UITableViewDelegate
-extension HouseViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+extension HouseViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
-    private func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let numberOfRooms = DataController.shared.CurrentHouse?.Rooms.count else {
+            return 5
+        }
+        return numberOfRooms
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "roomCell", for: indexPath as IndexPath)
-        cell.textLabel?.text = "Testing"
+        guard let roomName = DataController.shared.CurrentHouse?.Rooms[indexPath.row].roomName else {
+            cell.textLabel?.text =  "No name"
+            return cell
+        }
+        cell.textLabel?.text = roomName
         return cell
     }
 }
@@ -124,8 +147,8 @@ extension HouseViewController: UIImagePickerControllerDelegate, UINavigationCont
         
         getRoomName(completed: {roomName -> Void in
             addPathwaysController.setImage(selectedImage: chosenImage)
-            addPathwaysController.setupNavBar(roomName: roomName)
-            
+            DataController.shared.setupCurrentRoom(chosenRoom: Room(roomName: roomName, roomImage: chosenImage))
+            addPathwaysController.setupNavBar()
             self.navigationController?.pushViewController(addPathwaysController, animated: true)
         })
         

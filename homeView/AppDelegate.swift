@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        let houseView = HouseViewController(nibName: nil, bundle: nil)
-        let navController = UINavigationController(rootViewController: houseView)
+        let findHouse = FindHouseViewController(nibName: nil, bundle: nil)
+        let navController = UINavigationController(rootViewController: findHouse)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         return true

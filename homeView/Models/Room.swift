@@ -10,13 +10,13 @@ import UIKit
 
 class Room {
     var roomName: String
-    var imageName: String
+    var roomImage: UIImage
     var pathways: [Pathway]
     
-    init(roomName: String, imageName: String, pathways: [Pathway]) {
+    init(roomName: String, roomImage: UIImage) {
         self.roomName = roomName
-        self.imageName = imageName
-        self.pathways = pathways
+        self.roomImage = roomImage
+        self.pathways = [Pathway]()
     }
     
     func addPath(pathwayToAdd: Pathway) {

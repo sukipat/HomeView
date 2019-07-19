@@ -9,11 +9,11 @@
 import UIKit
 
 class Pathway {
-    var roomName: String
-    var xCoord: CGFloat
+    var resultingRoom: String
+    var xPercent: CGFloat
     
-    init(roomName: String, xCoord: CGFloat) {
-        self.roomName = roomName
-        self.xCoord = xCoord
+    init(resultingRoom: String, xPercent: CGFloat) {
+        self.resultingRoom = resultingRoom
+        self.xPercent = xPercent
     }
 }

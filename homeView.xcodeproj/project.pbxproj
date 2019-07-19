@@ -19,6 +19,9 @@
 		BC7B355622DECA87000CA677 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355522DECA87000CA677 /* Room.swift */; };
 		BC7B355822DED52D000CA677 /* AddPathwaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355722DED52D000CA677 /* AddPathwaysViewController.swift */; };
 		BC7B355A22DED7A7000CA677 /* AddPathwaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355922DED7A7000CA677 /* AddPathwaysView.swift */; };
+		BCB36AF322E177E800A83A4C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB36AF222E177E800A83A4C /* DataController.swift */; };
+		BCF3EF1022E144F000FB2435 /* FindHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF3EF0F22E144F000FB2435 /* FindHouseViewController.swift */; };
+		BCF3EF1222E1451400FB2435 /* FindHouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF3EF1122E1451400FB2435 /* FindHouseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		BC7B355522DECA87000CA677 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		BC7B355722DED52D000CA677 /* AddPathwaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPathwaysViewController.swift; sourceTree = "<group>"; };
 		BC7B355922DED7A7000CA677 /* AddPathwaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPathwaysView.swift; sourceTree = "<group>"; };
+		BCB36AF222E177E800A83A4C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		BCF3EF0F22E144F000FB2435 /* FindHouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHouseViewController.swift; sourceTree = "<group>"; };
+		BCF3EF1122E1451400FB2435 /* FindHouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHouseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,7 @@
 			children = (
 				BC7B355322DEA964000CA677 /* HouseView.swift */,
 				BC7B355922DED7A7000CA677 /* AddPathwaysView.swift */,
+				BCF3EF1122E1451400FB2435 /* FindHouseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +139,8 @@
 			children = (
 				BC7B355122DEA8A7000CA677 /* HouseViewController.swift */,
 				BC7B355722DED52D000CA677 /* AddPathwaysViewController.swift */,
+				BCF3EF0F22E144F000FB2435 /* FindHouseViewController.swift */,
+				BCB36AF222E177E800A83A4C /* DataController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -247,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC7B355622DECA87000CA677 /* Room.swift in Sources */,
+				BCB36AF322E177E800A83A4C /* DataController.swift in Sources */,
 				BC1286E022DC02F000248C37 /* homeView.xcdatamodeld in Sources */,
 				BC12870122DC154100248C37 /* House.swift in Sources */,
 				BC7B355822DED52D000CA677 /* AddPathwaysViewController.swift in Sources */,
@@ -254,6 +264,8 @@
 				BC7B355A22DED7A7000CA677 /* AddPathwaysView.swift in Sources */,
 				BC7B355222DEA8A7000CA677 /* HouseViewController.swift in Sources */,
 				BC1286D822DC02F000248C37 /* AppDelegate.swift in Sources */,
+				BCF3EF1222E1451400FB2435 /* FindHouseView.swift in Sources */,
+				BCF3EF1022E144F000FB2435 /* FindHouseViewController.swift in Sources */,
 				BC00DD2C22E02E1600B6FE84 /* Pathway.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
