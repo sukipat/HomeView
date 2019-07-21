@@ -1,22 +1,19 @@
 //
-//  AddPathwaysView.swift
+//  RoomView.swift
 //  homeView
 //
-//  Created by Suki Patwardhan on 7/16/19.
+//  Created by Suki Patwardhan on 7/20/19.
 //  Copyright © 2019 Suki Patwardhan. All rights reserved.
 //
 
 import UIKit
 
-// MARK: - AddPathwaysDelegate
-protocol AddPathwaysDelegate: class {
-    func addPath(recognizer: UITapGestureRecognizer)
+protocol RoomViewDelegate: class {
+    
 }
 
-
-class AddPathwaysView: UIView {
-    // MARK: - Properties
-    weak var delegate: AddPathwaysDelegate?
+class RoomView: UIView {
+    weak var delegate: RoomViewDelegate?
     
     lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
@@ -29,8 +26,8 @@ class AddPathwaysView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = UIImageView.ContentMode.scaleAspectFill
         imageView.isUserInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(pictureTapped(_ :)))
-        imageView.addGestureRecognizer(tapRecognizer)
+//        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(pictureTapped(_ :)))
+//        imageView.addGestureRecognizer(tapRecognizer)
         return imageView
     }()
     
@@ -51,7 +48,6 @@ class AddPathwaysView: UIView {
         
         self.addSubview(scrollView)
         scrollView.addSubview(pictureView)
-        setupPathwayObjects()
     }
     
     func layoutView() {
@@ -66,30 +62,5 @@ class AddPathwaysView: UIView {
         pictureView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         pictureView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         pictureView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
-    }
-}
-
-// MARK: - Actions
-extension AddPathwaysView {
-    
-    func setupPathwayObjects() {
-        guard let pathways = DataController.shared.CurrentRoom?.pathways else {
-            return
-        }
-        
-        for pathway in pathways {
-            let xVal = pathway.xPercent * (pictureView.image?.size.width)!
-            let button = UIButton(type: .system)
-            button.setTitle(pathway.resultingRoom, for: .normal)
-            self.pictureView.addSubview(button)
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.leadingAnchor.constraint(equalTo: scrollView.subviews[0].leadingAnchor, constant: xVal).isActive = true
-            button.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor).isActive = true
-        }
-        
-        dump(pathways)
-    }
-    @objc func pictureTapped(_ tapRecognizer: UITapGestureRecognizer) {
-        delegate?.addPath(recognizer: tapRecognizer)
     }
 }

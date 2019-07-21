@@ -11,7 +11,6 @@ import UIKit
 class AddPathwaysViewController: UIViewController {
     // MARK: - Properties
     let addPathView = AddPathwaysView()
-    typealias receivedRoomName = (String) -> Void
 
     override func loadView() {
         view = addPathView
@@ -43,7 +42,7 @@ extension AddPathwaysViewController {
         self.navigationItem.title = DataController.shared.CurrentRoom?.roomName
     }
     
-    func getResultingRoom(completed: @escaping receivedRoomName) {
+    func getResultingRoom(completed: @escaping (String) -> Void) {
         
         var roomName = "Room"
         
@@ -69,7 +68,10 @@ extension AddPathwaysViewController {
     }
     
     @objc func addRoom() {
-        DataController.shared.CurrentHouse?.addRoom(roomToAdd: DataController.shared.CurrentRoom!)
+        guard let currentRoom = DataController.shared.CurrentRoom else {
+            return
+        }
+        DataController.shared.CurrentHouse?.addRoom(roomToAdd: currentRoom)
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -87,8 +89,13 @@ extension AddPathwaysViewController: AddPathwaysDelegate {
         let xPercent = location.x/imageWidth
         
         var currentPathway: Pathway? = nil
-        for pathway in DataController.shared.CurrentRoom!.pathways {
-            if xPercent > pathway.xPercent - 5 && xPercent < pathway.xPercent + 5{
+        
+        guard let pathways = DataController.shared.CurrentRoom?.pathways else {
+            return
+        }
+        
+        for pathway in pathways {
+            if xPercent > pathway.xPercent - 0.05 && xPercent < pathway.xPercent + 0.05 {
                 currentPathway = pathway
                 break
             }
@@ -101,6 +108,8 @@ extension AddPathwaysViewController: AddPathwaysDelegate {
         } else {
             pathwayExists(existingPathway: currentPathway!)
         }
+        
+        addPathView.setupPathwayObjects()
     }
 }
 

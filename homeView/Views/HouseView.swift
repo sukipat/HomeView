@@ -18,7 +18,9 @@ class HouseView: UIView {
     
     lazy var roomTable: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "roomCell")
+        tableView.register(RoomTableCell.self, forCellReuseIdentifier: "roomCell")
+        tableView.delegate = RoomTableController.shared
+        tableView.dataSource = RoomTableController.shared
         return tableView
     }()
     

@@ -14,12 +14,16 @@
 		BC1286E522DC02F100248C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1286E322DC02F100248C37 /* LaunchScreen.storyboard */; };
 		BC1286F022DC02F100248C37 /* homeViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1286EF22DC02F100248C37 /* homeViewUITests.swift */; };
 		BC12870122DC154100248C37 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC12870022DC154100248C37 /* House.swift */; };
+		BC3ECC3F22E2BD9D0004A4B1 /* RoomTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3ECC3E22E2BD9D0004A4B1 /* RoomTableController.swift */; };
+		BC3ECC4322E3C1380004A4B1 /* RoomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3ECC4222E3C1380004A4B1 /* RoomTableCell.swift */; };
 		BC7B355222DEA8A7000CA677 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355122DEA8A7000CA677 /* HouseViewController.swift */; };
 		BC7B355422DEA964000CA677 /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355322DEA964000CA677 /* HouseView.swift */; };
 		BC7B355622DECA87000CA677 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355522DECA87000CA677 /* Room.swift */; };
 		BC7B355822DED52D000CA677 /* AddPathwaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355722DED52D000CA677 /* AddPathwaysViewController.swift */; };
 		BC7B355A22DED7A7000CA677 /* AddPathwaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B355922DED7A7000CA677 /* AddPathwaysView.swift */; };
 		BCB36AF322E177E800A83A4C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB36AF222E177E800A83A4C /* DataController.swift */; };
+		BCC061AC22E3F12F00B09D29 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC061AB22E3F12F00B09D29 /* RoomView.swift */; };
+		BCC061AE22E3F1C100B09D29 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC061AD22E3F1C100B09D29 /* RoomViewController.swift */; };
 		BCF3EF1022E144F000FB2435 /* FindHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF3EF0F22E144F000FB2435 /* FindHouseViewController.swift */; };
 		BCF3EF1222E1451400FB2435 /* FindHouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF3EF1122E1451400FB2435 /* FindHouseView.swift */; };
 /* End PBXBuildFile section */
@@ -46,12 +50,16 @@
 		BC1286EF22DC02F100248C37 /* homeViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewUITests.swift; sourceTree = "<group>"; };
 		BC1286F122DC02F100248C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC12870022DC154100248C37 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		BC3ECC3E22E2BD9D0004A4B1 /* RoomTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableController.swift; sourceTree = "<group>"; };
+		BC3ECC4222E3C1380004A4B1 /* RoomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableCell.swift; sourceTree = "<group>"; };
 		BC7B355122DEA8A7000CA677 /* HouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		BC7B355322DEA964000CA677 /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
 		BC7B355522DECA87000CA677 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		BC7B355722DED52D000CA677 /* AddPathwaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPathwaysViewController.swift; sourceTree = "<group>"; };
 		BC7B355922DED7A7000CA677 /* AddPathwaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPathwaysView.swift; sourceTree = "<group>"; };
 		BCB36AF222E177E800A83A4C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		BCC061AB22E3F12F00B09D29 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		BCC061AD22E3F1C100B09D29 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		BCF3EF0F22E144F000FB2435 /* FindHouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHouseViewController.swift; sourceTree = "<group>"; };
 		BCF3EF1122E1451400FB2435 /* FindHouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHouseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +138,8 @@
 				BC7B355322DEA964000CA677 /* HouseView.swift */,
 				BC7B355922DED7A7000CA677 /* AddPathwaysView.swift */,
 				BCF3EF1122E1451400FB2435 /* FindHouseView.swift */,
+				BC3ECC4222E3C1380004A4B1 /* RoomTableCell.swift */,
+				BCC061AB22E3F12F00B09D29 /* RoomView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +151,8 @@
 				BC7B355722DED52D000CA677 /* AddPathwaysViewController.swift */,
 				BCF3EF0F22E144F000FB2435 /* FindHouseViewController.swift */,
 				BCB36AF222E177E800A83A4C /* DataController.swift */,
+				BC3ECC3E22E2BD9D0004A4B1 /* RoomTableController.swift */,
+				BCC061AD22E3F1C100B09D29 /* RoomViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -259,14 +271,18 @@
 				BCB36AF322E177E800A83A4C /* DataController.swift in Sources */,
 				BC1286E022DC02F000248C37 /* homeView.xcdatamodeld in Sources */,
 				BC12870122DC154100248C37 /* House.swift in Sources */,
+				BC3ECC3F22E2BD9D0004A4B1 /* RoomTableController.swift in Sources */,
+				BC3ECC4322E3C1380004A4B1 /* RoomTableCell.swift in Sources */,
 				BC7B355822DED52D000CA677 /* AddPathwaysViewController.swift in Sources */,
 				BC7B355422DEA964000CA677 /* HouseView.swift in Sources */,
 				BC7B355A22DED7A7000CA677 /* AddPathwaysView.swift in Sources */,
 				BC7B355222DEA8A7000CA677 /* HouseViewController.swift in Sources */,
 				BC1286D822DC02F000248C37 /* AppDelegate.swift in Sources */,
 				BCF3EF1222E1451400FB2435 /* FindHouseView.swift in Sources */,
+				BCC061AC22E3F12F00B09D29 /* RoomView.swift in Sources */,
 				BCF3EF1022E144F000FB2435 /* FindHouseViewController.swift in Sources */,
 				BC00DD2C22E02E1600B6FE84 /* Pathway.swift in Sources */,
+				BCC061AE22E3F1C100B09D29 /* RoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
